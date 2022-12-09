@@ -9,18 +9,18 @@ export function withHeaderFooterWrapper(WrappedComponent: ComponentType) {
     render() {
       return (
         <div>
-          <div className="HeaderFooterWrapper--header">
-            <div className="HeaderFooterWrapper--header__container">
-              <div className="HeaderFooterWrapper--header__name">
+          <div className="HeaderFooterWrapper__header">
+            <div className="HeaderFooterWrapper__header--container">
+              <div className="HeaderFooterWrapper__header--name">
                 Michael Lin
               </div>
-              <div className="HeaderFooterWrapper--header__buttons">
+              <div className="HeaderFooterWrapper__header--buttons">
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
-                    "HeaderFooterWrapper--header__button" +
+                    "HeaderFooterWrapper__header--button" +
                     (isActive
-                      ? " HeaderFooterWrapper--header__buttonActive"
+                      ? " HeaderFooterWrapper__header--buttonActive"
                       : "")
                   }
                   style={{ textDecoration: "none" }}
@@ -30,9 +30,9 @@ export function withHeaderFooterWrapper(WrappedComponent: ComponentType) {
                 <NavLink
                   to="/work"
                   className={({ isActive }) =>
-                    "HeaderFooterWrapper--header__button" +
+                    "HeaderFooterWrapper__header--button" +
                     (isActive
-                      ? " HeaderFooterWrapper--header__buttonActive"
+                      ? " HeaderFooterWrapper__header--buttonActive"
                       : "")
                   }
                   style={{ textDecoration: "none" }}
@@ -42,15 +42,15 @@ export function withHeaderFooterWrapper(WrappedComponent: ComponentType) {
               </div>
             </div>
           </div>
-          <div className="HeaderFooterWrapper--wrappedComponent">
+          <div className="HeaderFooterWrapper__wrappedComponent">
             <WrappedComponent />
           </div>
-          <div className="HeaderFooterWrapper--footer">
-            <div className="HeaderFooterWrapper--footer__social">
-              <LinkedInIcon className="HeaderFooterWrapper--footer__socialIcon" />
-              <GitHubIcon className="HeaderFooterWrapper--footer__socialIcon" />
+          <div className="HeaderFooterWrapper__footer">
+            <div className="HeaderFooterWrapper__footer--social">
+              <LinkedInIcon className="HeaderFooterWrapper__footer--socialIcon" />
+              <GitHubIcon className="HeaderFooterWrapper__footer--socialIcon" />
             </div>
-            <div className="HeaderFooterWrapper--footer__copyright">
+            <div className="HeaderFooterWrapper__footer--copyright">
               {"Copyright © " + new Date().getFullYear() + " Michael Lin"}
             </div>
           </div>

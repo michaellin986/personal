@@ -1,6 +1,6 @@
 @import "../../../main.scss";
 
-.HeaderFooterWrapper--header {
+.HeaderFooterWrapper__header {
   display: flex;
   justify-content: center;
   height: 50px;
@@ -8,35 +8,35 @@
   background-color: $background-color-primary;
 }
 
-.HeaderFooterWrapper--header__container {
+.HeaderFooterWrapper__header--container {
   display: flex;
   width: 768px;
   align-items: baseline;
   justify-content: space-between;
 }
 
-.HeaderFooterWrapper--header__name {
+.HeaderFooterWrapper__header--name {
   font-size: 48px;
   font-weight: bold;
   color: $color-primary;
 }
 
-.HeaderFooterWrapper--header__button {
+.HeaderFooterWrapper__header--button {
   color: $color-primary;
   margin: 20px;
 }
 
-.HeaderFooterWrapper--header__buttonActive {
+.HeaderFooterWrapper__header--buttonActive {
   font-weight: bold;
   border-bottom: 2px solid $color-primary;
 }
 
-.HeaderFooterWrapper--wrappedComponent {
+.HeaderFooterWrapper__wrappedComponent {
   background-color: $background-color-secondary;
   min-height: 1000px;
 }
 
-.HeaderFooterWrapper--footer {
+.HeaderFooterWrapper__footer {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -46,14 +46,14 @@
   background-color: $background-color-primary;
 }
 
-.HeaderFooterWrapper--footer__social {
+.HeaderFooterWrapper__footer--social {
   padding: 5px;
 }
 
-.HeaderFooterWrapper--footer__socialIcon {
+.HeaderFooterWrapper__footer--socialIcon {
   padding: 2px;
 }
 
-.HeaderFooterWrapper--footer__copyright {
+.HeaderFooterWrapper__footer--copyright {
   padding: 5px;
 }

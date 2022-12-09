@@ -1,0 +1,59 @@
+@import "../../../main.scss";
+
+.HeaderFooterWrapper--header {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  padding: 20px;
+  background-color: $background-color-primary;
+}
+
+.HeaderFooterWrapper--header__container {
+  display: flex;
+  width: 768px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.HeaderFooterWrapper--header__name {
+  font-size: 48px;
+  font-weight: bold;
+  color: $color-primary;
+}
+
+.HeaderFooterWrapper--header__button {
+  color: $color-primary;
+  margin: 20px;
+}
+
+.HeaderFooterWrapper--header__buttonActive {
+  font-weight: bold;
+  border-bottom: 2px solid $color-primary;
+}
+
+.HeaderFooterWrapper--wrappedComponent {
+  background-color: $background-color-secondary;
+  min-height: 1000px;
+}
+
+.HeaderFooterWrapper--footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100px;
+  padding: 20px;
+  color: $color-primary;
+  background-color: $background-color-primary;
+}
+
+.HeaderFooterWrapper--footer__social {
+  padding: 5px;
+}
+
+.HeaderFooterWrapper--footer__socialIcon {
+  padding: 2px;
+}
+
+.HeaderFooterWrapper--footer__copyright {
+  padding: 5px;
+}

@@ -4,4 +4,7 @@
         "source.fixAll.eslint": true
     },
     "eslint.codeActionsOnSave.rules": null,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
 }

@@ -34,6 +34,25 @@
   font-weight: bold;
 }
 
+.Other__position {
+  padding: 20px 0;
+}
+
+.Other__position--info {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.Other__position--description {
+  text-align: justify;
+  padding-top: 20px;
+}
+
+.Other__position--bullet {
+  list-style-type: square;
+}
+
 .Other__link {
   font-weight: bold;
   color: $color-secondary;

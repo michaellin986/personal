@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-evenly;
   width: 768px;
-  margin: 100px 0;
+  margin: 100px 40px;
 }
 
 .Home__image {
@@ -37,4 +37,18 @@
   font-weight: bold;
   color: $color-secondary;
   text-decoration: none;
+}
+
+@media (max-width: 700px) {
+  .Home {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 40px;
+  }
+
+  .Home__image {
+    width: 250px;
+    padding: 20px;
+    align-self: center;
+  }
 }

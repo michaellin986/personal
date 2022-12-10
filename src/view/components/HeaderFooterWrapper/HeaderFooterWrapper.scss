@@ -3,14 +3,14 @@
 .HeaderFooterWrapper__header {
   display: flex;
   justify-content: center;
-  height: 50px;
-  padding: 20px;
+  height: 70px;
+  margin: 20px 40px;
 }
 
 .HeaderFooterWrapper__header--container {
   display: flex;
   width: 768px;
-  align-items: baseline;
+  align-items: end;
   justify-content: space-between;
 }
 
@@ -62,4 +62,19 @@
 .HeaderFooterWrapper__footer--copyright {
   font-size: 12px;
   padding: 20px;
+}
+
+@media (max-width: 700px) {
+  .HeaderFooterWrapper__header--container {
+    display: flex;
+    flex-direction: column;
+    width: 768px;
+    align-items: center;
+  }
+
+  .HeaderFooterWrapper__header--name {
+    color: $color-primary;
+    font-size: 32px;
+    font-weight: bold;
+  }
 }

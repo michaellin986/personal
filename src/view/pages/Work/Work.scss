@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   width: 768px;
-  margin-top: 40px;
+  margin: 40px 40px 0 40px;
 }
 
 .Work__intro {
@@ -52,4 +52,12 @@
   font-weight: bold;
   color: $color-secondary;
   text-decoration: none;
+}
+
+@media (max-width: 700px) {
+  .Work__position--info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
 }

@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-evenly;
   width: 768px;
-  margin-top: 100px;
+  margin: 100px 0;
 }
 
 .Home__image {
@@ -30,7 +30,7 @@
 }
 
 .Home__text--description {
-  text-align: left;
+  text-align: justify;
 }
 
 .Home__text--link {

@@ -33,7 +33,6 @@
   display: flex;
   background-color: $background-color-secondary;
   justify-content: center;
-  min-height: 500px;
 }
 
 .HeaderFooterWrapper__footer {
@@ -61,5 +60,5 @@
 
 .HeaderFooterWrapper__footer--copyright {
   font-size: 12px;
-  padding: 10px;
+  padding: 20px;
 }

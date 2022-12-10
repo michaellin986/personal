@@ -1,10 +1,10 @@
 import { PureComponent } from "react";
 import withHeaderFooterWrapper from "../../components/HeaderFooterWrapper";
 
-class Music extends PureComponent {
+class Other extends PureComponent {
   render() {
-    return <div>Music</div>;
+    return <div>Other</div>;
   }
 }
 
-export default withHeaderFooterWrapper(Music);
+export default withHeaderFooterWrapper(Other);

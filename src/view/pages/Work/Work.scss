@@ -1,0 +1,44 @@
+@import "../../../main.scss";
+
+.Work {
+  display: flex;
+  flex-direction: column;
+  width: 768px;
+  margin-top: 50px;
+}
+
+.Work__intro {
+  font-size: 32px;
+  padding-bottom: 50px;
+}
+
+.Work__company {
+  border-top: 1px solid $color-primary;
+  padding: 50px 0;
+}
+
+.Work__company--name {
+  font-size: 32px;
+  text-align: left;
+}
+
+.Work__position {
+  padding: 20px 0;
+}
+
+.Work__position--info {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.Work__position--description {
+  text-align: justify;
+  padding-top: 20px;
+}
+
+.Work__link {
+  font-weight: bold;
+  color: $color-secondary;
+  text-decoration: none;
+}

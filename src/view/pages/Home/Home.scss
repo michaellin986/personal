@@ -1,2 +1,41 @@
-.Home__header--image {
+@import "../../../main.scss";
+
+.Home {
+  display: flex;
+  justify-content: space-evenly;
+  width: 768px;
+  color: $color-primary;
+  margin-top: 100px;
+}
+
+.Home__image {
+  width: 250px;
+  padding: 20px;
+}
+
+.Home__image--headshot {
+  height: 250px;
+  border-radius: 50%;
+}
+
+.Home__text {
+  flex-direction: column;
+  padding: 20px;
+}
+
+.Home__text--welcome {
+  display: flex;
+  justify-content: center;
+  font-size: 48px;
+  padding-bottom: 20px;
+}
+
+.Home__text--description {
+  text-align: left;
+}
+
+.Home__text--link {
+  font-weight: bold;
+  color: $color-secondary;
+  text-decoration: none;
 }

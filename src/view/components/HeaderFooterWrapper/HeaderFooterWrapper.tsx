@@ -3,6 +3,7 @@ import { PureComponent, ComponentType } from "react";
 import { NavLink } from "react-router-dom";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import { IconButton } from "@mui/material";
 
 export function withHeaderFooterWrapper(WrappedComponent: ComponentType) {
   return class HeaderFooterWrapper extends PureComponent {
@@ -47,11 +48,31 @@ export function withHeaderFooterWrapper(WrappedComponent: ComponentType) {
           </div>
           <div className="HeaderFooterWrapper__footer">
             <div className="HeaderFooterWrapper__footer--social">
-              <LinkedInIcon className="HeaderFooterWrapper__footer--socialIcon" />
-              <GitHubIcon className="HeaderFooterWrapper__footer--socialIcon" />
+              <div className="HeaderFooterWrapper__footer--socialButton">
+                <IconButton
+                  href="https://www.linkedin.com/in/michaellin986/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ padding: 0 }}
+                >
+                  <LinkedInIcon className="HeaderFooterWrapper__footer--socialIcon" />
+                </IconButton>
+              </div>
+              <div className="HeaderFooterWrapper__footer--socialButton">
+                <IconButton
+                  href="https://github.com/michaellin986/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ padding: 0 }}
+                >
+                  <GitHubIcon className="HeaderFooterWrapper__footer--socialIcon" />
+                </IconButton>
+              </div>
             </div>
             <div className="HeaderFooterWrapper__footer--copyright">
-              {"Copyright © " + new Date().getFullYear() + " Michael Lin"}
+              {"Copyright © " +
+                new Date().getFullYear() +
+                " Michael Lin. All rights reserved."}
             </div>
           </div>
         </div>

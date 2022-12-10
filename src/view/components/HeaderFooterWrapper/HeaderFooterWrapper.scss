@@ -5,7 +5,6 @@
   justify-content: center;
   height: 50px;
   padding: 20px;
-  background-color: $background-color-primary;
 }
 
 .HeaderFooterWrapper__header--container {
@@ -28,12 +27,14 @@
 
 .HeaderFooterWrapper__header--buttonActive {
   font-weight: bold;
-  border-bottom: 2px solid $color-primary;
+  border-bottom: 2px solid $color-secondary;
 }
 
 .HeaderFooterWrapper__wrappedComponent {
+  display: flex;
   background-color: $background-color-secondary;
-  min-height: 1000px;
+  justify-content: center;
+  min-height: 500px;
 }
 
 .HeaderFooterWrapper__footer {
@@ -43,17 +44,24 @@
   height: 100px;
   padding: 20px;
   color: $color-primary;
-  background-color: $background-color-primary;
 }
 
 .HeaderFooterWrapper__footer--social {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   padding: 5px;
+}
+
+.HeaderFooterWrapper__footer--socialButton {
+  padding: 0 10px;
 }
 
 .HeaderFooterWrapper__footer--socialIcon {
-  padding: 2px;
+  color: $color-primary;
 }
 
 .HeaderFooterWrapper__footer--copyright {
-  padding: 5px;
+  font-size: 12px;
+  padding: 10px;
 }

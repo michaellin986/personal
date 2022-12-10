@@ -12,8 +12,14 @@ export function withHeaderFooterWrapper(WrappedComponent: ComponentType) {
         <div>
           <div className="HeaderFooterWrapper__header">
             <div className="HeaderFooterWrapper__header--container">
-              <div className="HeaderFooterWrapper__header--name">
-                Michael Lin
+              <div>
+                <NavLink
+                  to="/"
+                  className="HeaderFooterWrapper__header--name"
+                  style={{ textDecoration: "none" }}
+                >
+                  Michael Lin
+                </NavLink>
               </div>
               <div className="HeaderFooterWrapper__header--buttons">
                 <NavLink

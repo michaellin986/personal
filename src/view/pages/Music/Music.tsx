@@ -1,9 +1,127 @@
+import "./Music.scss";
 import { PureComponent } from "react";
 import withHeaderFooterWrapper from "../../components/HeaderFooterWrapper";
 
 class Music extends PureComponent {
   render() {
-    return <div>Music</div>;
+    return (
+      <div className="Music">
+        <div className="Music__intro">
+          <div className="Music__intro--quote">
+            &ldquo;To achieve great things, two things are needed: a plan and
+            not quite enough time.&rdquo;
+          </div>
+          <div className="Music__intro--origin">- Leonard Bernstein</div>
+        </div>
+        <div className="Music__content">
+          <div className="Music__content--section">Violin</div>
+          <p>
+            Since Fall 2022, I have been the Concertmaster of the{" "}
+            <a
+              href="https://music.northwestern.edu/academics/ensembles/philharmonia"
+              className="Music__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Northwestern University Philharmonia Orchestra
+            </a>
+            . We perform symphonic works such as Dvorak&apos;s Slavonic Dances,
+            and Prokofiev&apos;s Symphony No. 7.
+          </p>
+          <p>
+            Before returning to school, I played violin with various ensembles
+            including{" "}
+            <a
+              href="https://www.capitalcitysymphony.org/"
+              className="Music__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Capital City Symphony
+            </a>{" "}
+            in Washington D.C.,{" "}
+            <a
+              href="https://www.gvo.org/"
+              className="Music__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Greenwich Village Orchestra
+            </a>{" "}
+            in New York City, and{" "}
+            <a
+              href="http://www.concordorchestra.org/"
+              className="Music__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Concord Chamber Orchestra
+            </a>{" "}
+            in Milwaukee. During college, I was a member of the{" "}
+            <a
+              href="https://music.duke.edu/ensembles/symphony-orchestra"
+              className="Music__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Duke Symphony Orchestra
+            </a>
+            , and before that I was an active member of the{" "}
+            <a
+              href="https://myso.org/"
+              className="Music__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Milwaukee Youth Symphony Orchestra
+            </a>
+            .
+          </p>
+          <p>
+            In addition to playing in orchestras, I have also performed as a
+            soloist and a chamber musician.
+          </p>
+          <p>
+            My primary teachers include Daniel Henry, Jim Schultz, Beth Rees,
+            Yuri Anisimov, and{" "}
+            <a
+              href="https://ciompi.org/about/eric-pritchard/"
+              className="Music__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Eric Pritchard
+            </a>
+            .
+          </p>
+        </div>
+        <div className="Music__content">
+          <div className="Music__content--section">Conducting</div>
+          <p>
+            In college, I had the privilege of studying conducting with{" "}
+            <a
+              href="https://scholars.duke.edu/person/verena.m"
+              className="Music__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Professor Verena Mösenbichler-Bryant
+            </a>
+            , as well as conducting a chamber orchestra{" "}
+            <a
+              href="https://www.youtube.com/watch?v=jPhG8yzFT4U"
+              className="Music__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              performance
+            </a>
+            . Before that, I had the opportunity to conduct the pit orchestra
+            for a musical production during my senior year of high school.
+          </p>
+        </div>
+      </div>
+    );
   }
 }
 

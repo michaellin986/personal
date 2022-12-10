@@ -1,4 +1,5 @@
 import { PureComponent } from "react";
+import withHeaderFooterWrapper from "../../components/HeaderFooterWrapper";
 
 class Work extends PureComponent {
   render() {
@@ -20,4 +21,4 @@ class Work extends PureComponent {
   }
 }
 
-export default Work;
+export default withHeaderFooterWrapper(Work);

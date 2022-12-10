@@ -113,7 +113,7 @@ class Other extends PureComponent {
                 Mathematical Biosciences Institute at The Ohio State University
               </a>
               . My work was funded by the National Science Foundation.
-              <ul>
+              <ul className="Other__position--bullets">
                 <li className="Other__position--bullet">
                   A Mechanistic Model for Metastatic Tumour Growth and Treatment
                   with Radiation Therapy (
@@ -162,7 +162,7 @@ class Other extends PureComponent {
               be able to reduce platelet adhesion. I was a co-author (as Qiuyu
               Lin) on one of the papers we published in American Society for
               Artificial Internal Organs Journal.
-              <ul>
+              <ul className="Other__position--bullets">
                 <li className="Other__position--bullet">
                   Point-of-Care Rapid Seeding Ventricular Assist Device with
                   Blood-Derived Endothelial Cells to Create a Living

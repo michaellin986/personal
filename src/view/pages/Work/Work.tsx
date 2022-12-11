@@ -26,7 +26,7 @@ class Work extends PureComponent {
           <div className="Work__position">
             <div className="Work__position--info">
               <div className="Work__position--titleCompany">
-                Software Engineer, Portal
+                Software Engineer, Product Experience
               </div>
               <div className="Work__position--date">Jan 2022 - Aug 2022</div>
             </div>

@@ -159,9 +159,9 @@ class Other extends PureComponent {
               reducing thrombotic complications for patients with ventricular
               assist devices (e.g. stint). Specifically, we were interested in
               seeding EPCs onto sintered titanium surfaces to see if they would
-              be able to reduce platelet adhesion. I was a co-author (as Qiuyu
-              Lin) on one of the papers we published in American Society for
-              Artificial Internal Organs Journal.
+              reduced platelet adhesion. I was a co-author (as Qiuyu Lin) on one
+              of the papers we published in the American Society for Artificial
+              Internal Organs Journal.
               <ul className="Other__position--bullets">
                 <li className="Other__position--bullet">
                   Point-of-Care Rapid Seeding Ventricular Assist Device with

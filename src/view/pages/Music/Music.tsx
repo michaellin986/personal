@@ -106,8 +106,8 @@ class Music extends PureComponent {
               rel="noopener noreferrer"
             >
               Professor Verena Mösenbichler-Bryant
-            </a>
-            , as well as conducting a chamber orchestra{" "}
+            </a>{" "}
+            as well as conducting a chamber orchestra{" "}
             <a
               href="https://www.youtube.com/watch?v=jPhG8yzFT4U"
               className="Music__link"

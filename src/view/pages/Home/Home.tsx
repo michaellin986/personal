@@ -26,8 +26,8 @@ class Home extends PureComponent {
             >
               joint MBA program in Artificial Intelligence
             </a>{" "}
-            at the Kellogg School of Management and the McCormick School of
-            Engineering, Northwestern University. My passions are solving
+            in the Kellogg School of Management and the McCormick School of
+            Engineering at Northwestern University. My passions are solving
             challenging problems and making a positive impact at the
             intersection of business and technology.
           </div>

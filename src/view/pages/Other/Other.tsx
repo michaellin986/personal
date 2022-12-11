@@ -17,6 +17,43 @@ class Other extends PureComponent {
           <div className="Other__intro--origin">- Me</div>
         </div>
         <div className="Other__content">
+          <div className="Other__content--section">Education</div>
+          <div className="Other__position">
+            <div className="Other__position--info">
+              <div className="Other__position--org">
+                Master of Business Administration, Northwestern University
+              </div>
+            </div>
+            <div className="Other__position--description">
+              I am currently pursuing a joint MBA degree in Artificial
+              Intelligence in the Kellogg School of Management and the McCormick
+              School of Engineering at Northwestern University.
+            </div>
+          </div>
+          <div className="Other__position">
+            <div className="Other__position--info">
+              <div className="Other__position--org">
+                Bachelor of Science, Duke University
+              </div>
+            </div>
+            <div className="Other__position--description">
+              I received a Bachelor of Science degree in Mathematics and
+              Statistical Science, and a minor in Computer Science from Duke
+              University. I graduated <i>magna cum laude</i> and was inducted
+              into the{" "}
+              <a
+                href="https://www.pbk.org/"
+                className="Other__link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Phi Beta Kappa
+              </a>{" "}
+              honor society.
+            </div>
+          </div>
+        </div>
+        <div className="Other__content">
           <div className="Other__content--section">Service</div>
           <div className="Other__position">
             <div className="Other__position--info">

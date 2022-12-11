@@ -158,7 +158,7 @@ class Other extends PureComponent {
               we studied the impact of endothelial progenitor cells (EPCs) on
               reducing thrombotic complications for patients with ventricular
               assist devices (e.g. stint). Specifically, we were interested in
-              seeding EPCs onto sintered titanium surfaces to see if they would
+              seeding EPCs onto sintered titanium surfaces to see if they
               reduced platelet adhesion. I was a co-author (as Qiuyu Lin) on one
               of the papers we published in the American Society for Artificial
               Internal Organs Journal.

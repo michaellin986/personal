@@ -3,3 +3,14 @@ $background-color-secondary: #020409;
 
 $color-primary: #ffffff;
 $color-secondary: #61dbfb;
+$color-tertiary: #4169e1;
+$color-quaternary: #ff0000;
+
+:export {
+  colorPrimary: $color-primary;
+  colorSecondary: $color-secondary;
+  colorTertiary: $color-tertiary;
+  colorQuaternary: $color-quaternary;
+  backgroundColorPrimary: $background-color-primary;
+  backgroundColorSecondary: $background-color-secondary;
+}

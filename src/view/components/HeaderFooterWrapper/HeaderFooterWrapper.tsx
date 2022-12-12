@@ -35,7 +35,7 @@ export function withHeaderFooterWrapper(WrappedComponent: ComponentType) {
                   Home
                 </NavLink>
                 <NavLink
-                  to="/work/"
+                  to="/work"
                   className={({ isActive }) =>
                     "HeaderFooterWrapper__header--button" +
                     (isActive
@@ -47,7 +47,7 @@ export function withHeaderFooterWrapper(WrappedComponent: ComponentType) {
                   Work
                 </NavLink>
                 <NavLink
-                  to="/music/"
+                  to="/music"
                   className={({ isActive }) =>
                     "HeaderFooterWrapper__header--button" +
                     (isActive
@@ -59,7 +59,7 @@ export function withHeaderFooterWrapper(WrappedComponent: ComponentType) {
                   Music
                 </NavLink>
                 <NavLink
-                  to="/travel/"
+                  to="/travel"
                   className={({ isActive }) =>
                     "HeaderFooterWrapper__header--button" +
                     (isActive
@@ -71,7 +71,7 @@ export function withHeaderFooterWrapper(WrappedComponent: ComponentType) {
                   Travel
                 </NavLink>
                 <NavLink
-                  to="/other/"
+                  to="/other"
                   className={({ isActive }) =>
                     "HeaderFooterWrapper__header--button" +
                     (isActive

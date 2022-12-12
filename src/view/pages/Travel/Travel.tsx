@@ -14,7 +14,7 @@ class Travel extends PureComponent {
           <div className="Travel__section--name">Exploring New Places</div>
           <div className="Travel__section--description">
             <p>
-              The map above shows most of the places I&apos;ve flown to and
+              The map above shows a sample of the places I&apos;ve flown to and
               routes I have flown on across 31 airlines since 2002.
             </p>
             <p>

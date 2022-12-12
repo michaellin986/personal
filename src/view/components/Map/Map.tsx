@@ -11,30 +11,35 @@ const coordinates: {
 } = data.coordinates;
 const countries: string[] = data.countries;
 
-const points = Object.keys(coordinates).map((loc) => {
-  return {
-    geometry: {
-      type: "Point",
-      coordinates: coordinates[loc],
-    },
-    label: loc,
-  };
-});
+const points = Object.keys(coordinates).map((loc) => ({
+  geometry: {
+    type: "Point",
+    coordinates: coordinates[loc],
+  },
+  label: loc,
+}));
 
 const lines = routes.map((route) => {
   const [loc1, loc2] = route;
-  const coord1 = coordinates[loc1];
-  const coord2 = coordinates[loc2];
+  const coordinate1 = coordinates[loc1];
+  const coordinate2 = coordinates[loc2];
   return {
     geometry: {
       type: "LineString",
-      coordinates: [coord1, coord2],
+      coordinates: [coordinate1, coordinate2],
     },
     label: route.join("/"),
   };
 });
 
 class Map extends PureComponent {
+  root: am5.Root | undefined;
+
+  constructor(props: never) {
+    super(props);
+    this.root = undefined;
+  }
+
   componentDidMount(): void {
     const root = am5.Root.new("chartdiv");
     const chart = root.container.children.push(
@@ -94,6 +99,14 @@ class Map extends PureComponent {
       tooltipPosition: "pointer",
     });
     lineSeries.data.setAll(lines);
+
+    this.root = root;
+  }
+
+  componentWillUnmount(): void {
+    if (this.root) {
+      this.root.dispose();
+    }
   }
 
   render() {

@@ -5,13 +5,11 @@ import * as am5 from "@amcharts/amcharts5";
 import * as am5map from "@amcharts/amcharts5/map";
 import am5geodata_worldGreatLakesHigh from "@amcharts/amcharts5-geodata/worldGreatLakesHigh";
 
-type coordinatesType = {
+const routes: string[][] = data.routes;
+const coordinates: {
   [key: string]: number[];
-};
-type routesType = string[][];
-
-const routes: routesType = data.routes;
-const coordinates: coordinatesType = data.coordinates;
+} = data.coordinates;
+const countries: string[] = data.countries;
 
 const points = Object.keys(coordinates).map((loc) => {
   return {
@@ -56,12 +54,28 @@ class Map extends PureComponent {
       })
     );
 
+    polygonSeries.mapPolygons.template.setAll({
+      templateField: "polygonSettings",
+    });
+
+    polygonSeries.data.setAll(
+      countries.map((country) => {
+        return {
+          id: country,
+          polygonSettings: {
+            fill: am5.color("#4169e1"),
+          },
+        };
+      })
+    );
+
     const pointSeries = chart.series.push(am5map.MapPointSeries.new(root, {}));
     pointSeries.bullets.push(() => {
       return am5.Bullet.new(root, {
         sprite: am5.Circle.new(root, {
           radius: 3,
-          fill: am5.color(0xff0000),
+          fill: am5.color("#ff0000"),
+          stroke: am5.color("#ffffff"),
           tooltipText: "{label}",
           tooltipPosition: "pointer",
         }),

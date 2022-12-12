@@ -42,15 +42,15 @@
   display: flex;
   justify-content: space-between;
   font-weight: bold;
+  padding-bottom: 20px;
 }
 
 .Other__position--description {
   text-align: justify;
-  padding-top: 20px;
 }
 
 .Other__position--bullets {
-  padding-left: 15px;
+  padding-left: 18px;
 }
 
 .Other__position--bullet {
@@ -61,4 +61,12 @@
   font-weight: bold;
   color: $color-secondary;
   text-decoration: none;
+}
+
+.Other__position--bullets {
+  padding-left: 18px;
+}
+
+.Other__position--bullet {
+  list-style-type: square;
 }

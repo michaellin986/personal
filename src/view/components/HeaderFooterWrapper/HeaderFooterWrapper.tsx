@@ -59,6 +59,18 @@ export function withHeaderFooterWrapper(WrappedComponent: ComponentType) {
                   Music
                 </NavLink>
                 <NavLink
+                  to="/travel/"
+                  className={({ isActive }) =>
+                    "HeaderFooterWrapper__header--button" +
+                    (isActive
+                      ? " HeaderFooterWrapper__header--buttonActive"
+                      : "")
+                  }
+                  style={{ textDecoration: "none" }}
+                >
+                  Travel
+                </NavLink>
+                <NavLink
                   to="/other/"
                   className={({ isActive }) =>
                     "HeaderFooterWrapper__header--button" +

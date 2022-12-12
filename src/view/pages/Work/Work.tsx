@@ -150,16 +150,8 @@ class Work extends PureComponent {
               faced or sought. I provided settlement support for clients
               recovering asbestos liablities losses from insurance companies. In
               addition, I worked on a natural gas derivatives project on behalf
-              of a state government. Most of the analyses were performed in{" "}
-              <a
-                href="https://www.stata.com/"
-                className="Work__link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                STATA
-              </a>
-              .
+              of a state government. Most of the analyses were performed in
+              STATA.
             </div>
           </div>
         </div>

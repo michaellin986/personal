@@ -218,6 +218,58 @@ class Other extends PureComponent {
             </div>
           </div>
         </div>
+        <div className="Other__content">
+          <div className="Other__content--section">Skills</div>
+          <div className="Other__position">
+            <div className="Other__position--description">
+              Most of my skills are from coursework and job experience.
+              Academically, I have significant exposure to:
+              <ul className="Other__position--bullets">
+                <li className="Other__position--bullet">Bayesian statistics</li>
+                <li className="Other__position--bullet">
+                  Markov chain Monte Carlo (Gibbs sampling, Metropolis-Hastings
+                  algorithm)
+                </li>
+                <li className="Other__position--bullet">
+                  Stochastic processes
+                </li>
+                <li className="Other__position--bullet">
+                  Ordinary and partial differetial equations
+                </li>
+              </ul>
+              Professionally, I have experience with:
+              <ul className="Other__position--bullets">
+                <li className="Other__position--bullet">
+                  Programming languages: Python, Javascript/Typescript, Java, R,
+                  MATLAB
+                </li>
+                <li className="Other__position--bullet">
+                  Web development: Django REST Framwork, React, Redux, HTML, CSS
+                </li>
+                <li className="Other__position--bullet">
+                  Databases: PostgreSQL, Redis
+                </li>
+                <li className="Other__position--bullet">
+                  Data analytics: Databricks, STATA
+                </li>
+                <li className="Other__position--bullet">
+                  AWS infrastructure: S3, EC2, ECS, RDS, Lambda, SQS,
+                  ElastiCache, CDK
+                </li>
+              </ul>
+              In addition, I am an{" "}
+              <a
+                href="https://www.credly.com/badges/2a946851-550f-4ca8-b482-6949c31a92e3"
+                className="Other__link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                AWS Certified Developer - Associate
+              </a>
+              .
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

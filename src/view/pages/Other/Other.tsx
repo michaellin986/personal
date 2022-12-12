@@ -203,7 +203,7 @@ class Other extends PureComponent {
                 <li className="Other__position--bullet">
                   Point-of-Care Rapid Seeding Ventricular Assist Device with
                   Blood-Derived Endothelial Cells to Create a Living
-                  Antithrombotic Coating (
+                  Anti-thrombotic Coating (
                   <a
                     href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4925231/"
                     className="Other__link"
@@ -234,7 +234,7 @@ class Other extends PureComponent {
                   Stochastic processes
                 </li>
                 <li className="Other__position--bullet">
-                  Ordinary and partial differetial equations
+                  Ordinary and partial differential equations
                 </li>
               </ul>
               Professionally, I have experience with:
@@ -244,7 +244,8 @@ class Other extends PureComponent {
                   MATLAB
                 </li>
                 <li className="Other__position--bullet">
-                  Web development: Django REST Framwork, React, Redux, HTML, CSS
+                  Web development: Django REST Framework, React, Redux, HTML,
+                  CSS
                 </li>
                 <li className="Other__position--bullet">
                   Databases: PostgreSQL, Redis

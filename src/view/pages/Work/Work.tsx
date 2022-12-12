@@ -148,10 +148,10 @@ class Work extends PureComponent {
             <div className="Work__position--description">
               My work involved assessing the economic damage that clients either
               faced or sought. I provided settlement support for clients
-              recovering asbestos liablities losses from insurance companies. In
-              addition, I worked on a natural gas derivatives project on behalf
-              of a state government. Most of the analyses were performed in
-              STATA.
+              recovering asbestos liabilities losses from insurance companies.
+              In addition, I worked on a natural gas derivatives project on
+              behalf of a state government. Most of the analyses were performed
+              in STATA.
             </div>
           </div>
         </div>

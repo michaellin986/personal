@@ -219,19 +219,16 @@ class Other extends PureComponent {
           </div>
         </div>
         <div className="Other__content">
-          <div className="Other__content--section">Skills</div>
+          <div className="Other__content--section">Technical Skills</div>
           <div className="Other__position">
             <div className="Other__position--description">
-              Most of my skills are from coursework and job experience.
-              Academically, I have significant exposure to:
+              I acquired most of my technical skills from coursework and job
+              experience. Academically, I have significant exposure to:
               <ul className="Other__position--bullets">
                 <li className="Other__position--bullet">Bayesian statistics</li>
                 <li className="Other__position--bullet">
                   Markov chain Monte Carlo (Gibbs sampling, Metropolis-Hastings
                   algorithm)
-                </li>
-                <li className="Other__position--bullet">
-                  Stochastic processes
                 </li>
                 <li className="Other__position--bullet">
                   Ordinary and partial differential equations

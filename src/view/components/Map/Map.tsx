@@ -71,6 +71,21 @@ class Map extends PureComponent {
     );
   }
 
+  createLineSeries(root: am5.Root, chart: am5map.MapChart): void {
+    const lineSeries = chart.series.push(
+      am5map.MapLineSeries.new(root, {
+        stroke: am5.color(variables.colorPrimary),
+        lineType: "curved",
+      })
+    );
+    lineSeries.mapLines.template.setAll({
+      strokeWidth: 1.5,
+      tooltipText: "{label}",
+      tooltipPosition: "pointer",
+    });
+    lineSeries.data.setAll(lines);
+  }
+
   createPointSeries(root: am5.Root, chart: am5map.MapChart): void {
     const pointSeries = chart.series.push(am5map.MapPointSeries.new(root, {}));
     pointSeries.bullets.push(() => {
@@ -87,21 +102,6 @@ class Map extends PureComponent {
     pointSeries.data.setAll(points);
   }
 
-  createLineSeries(root: am5.Root, chart: am5map.MapChart): void {
-    const lineSeries = chart.series.push(
-      am5map.MapLineSeries.new(root, {
-        stroke: am5.color(variables.colorPrimary),
-        lineType: "curved",
-      })
-    );
-    lineSeries.mapLines.template.setAll({
-      strokeWidth: 1.5,
-      tooltipText: "{label}",
-      tooltipPosition: "pointer",
-    });
-    lineSeries.data.setAll(lines);
-  }
-
   componentDidMount(): void {
     const root = am5.Root.new("chartdiv");
     const chart = root.container.children.push(
@@ -114,8 +114,8 @@ class Map extends PureComponent {
     );
 
     this.createPolygonSeries(root, chart);
-    this.createPointSeries(root, chart);
     this.createLineSeries(root, chart);
+    this.createPointSeries(root, chart);
     this.root = root;
   }
 

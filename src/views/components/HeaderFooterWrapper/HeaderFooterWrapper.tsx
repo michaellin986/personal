@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { IconButton } from "@mui/material";
+import Authentication from "../Authentication";
 
 export function withHeaderFooterWrapper(WrappedComponent: ComponentType) {
   return class HeaderFooterWrapper extends PureComponent {
@@ -82,6 +83,7 @@ export function withHeaderFooterWrapper(WrappedComponent: ComponentType) {
                 >
                   Other
                 </NavLink>
+                {/* <Authentication /> */}
               </div>
             </div>
           </div>

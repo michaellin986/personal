@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.scss";
-import Home from "./view/pages/Home/Home";
-import Work from "./view/pages/Work";
-import Music from "./view/pages/Music";
-import Other from "./view/pages/Other";
-import Travel from "./view/pages/Travel";
+import Home from "./views/pages/Home/Home";
+import Work from "./views/pages/Work";
+import Music from "./views/pages/Music";
+import Other from "./views/pages/Other";
+import Travel from "./views/pages/Travel";
 
 function App() {
   return (

@@ -1,5 +1,5 @@
 import { Dispatch } from "redux";
-import axios from "../Api";
+import axios from "axios";
 import {
   loginRequest,
   loginSuccess,

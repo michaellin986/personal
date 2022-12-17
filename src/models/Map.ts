@@ -6,3 +6,5 @@ export type Airport = {
   latitude: number;
   longitude: number;
 };
+
+export type Route = [string, string];

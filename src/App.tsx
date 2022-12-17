@@ -1,5 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.scss";
+import "./Api";
+
 import Home from "./views/pages/Home/Home";
 import Work from "./views/pages/Work";
 import Music from "./views/pages/Music";

@@ -11,38 +11,32 @@ import am5geodata_usaHigh from "@amcharts/amcharts5-geodata/usaHigh";
 
 import { RootState } from "../../../store";
 import data from "../../../assets/data/Travel.json";
-import { Airport } from "../../../models/Map";
-import { fetchAirports } from "../../../actions/mapActions";
+import { Airport, Route } from "../../../models/Map";
+import {
+  fetchAirports,
+  fetchFlights,
+  fetchRoutes,
+} from "../../../actions/mapActions";
 
 type MapProps = {
   isLoading: boolean;
   airports: Airport[];
+  routes: Route[];
   fetchAirports: typeof fetchAirports;
+  fetchFlights: typeof fetchFlights;
+  fetchRoutes: typeof fetchRoutes;
 };
 
 type MapStates = {
   root: am5.Root | undefined;
   pointSeries: am5map.MapPointSeries | undefined;
   polygonSeries: am5map.MapPolygonSeries | undefined;
+  lineSeries: am5map.MapLineSeries | undefined;
 };
 
-const routes: string[][] = data.routes;
 const coordinates: {
   [key: string]: number[];
 } = data.coordinates;
-
-const lines = routes.map((route) => {
-  const [loc1, loc2] = route;
-  const coordinate1 = coordinates[loc1];
-  const coordinate2 = coordinates[loc2];
-  return {
-    geometry: {
-      type: "LineString",
-      coordinates: [coordinate1, coordinate2],
-    },
-    label: route.join("/"),
-  };
-});
 
 class Map extends PureComponent<MapProps, MapStates> {
   constructor(props: MapProps) {
@@ -51,6 +45,7 @@ class Map extends PureComponent<MapProps, MapStates> {
       root: undefined,
       pointSeries: undefined,
       polygonSeries: undefined,
+      lineSeries: undefined,
     };
   }
 
@@ -76,6 +71,28 @@ class Map extends PureComponent<MapProps, MapStates> {
     this.setState({ polygonSeries });
   }
 
+  createLines = () => {
+    const { airports, routes } = this.props;
+    return airports.length === 0 || routes.length === 0
+      ? data.routes.map((route) => ({
+          geometry: {
+            type: "LineString",
+            coordinates: route.map((loc) => coordinates[loc]),
+          },
+          label: route.join("/"),
+        }))
+      : routes.map((route) => ({
+          geometry: {
+            type: "LineString",
+            coordinates: route.map((loc) => {
+              const airport = airports.find((airport) => airport.code === loc);
+              return [airport?.longitude, airport?.latitude];
+            }),
+          },
+          label: route.join("/"),
+        }));
+  };
+
   createLineSeries(root: am5.Root, chart: am5map.MapChart): void {
     const lineSeries = chart.series.push(
       am5map.MapLineSeries.new(root, {
@@ -88,7 +105,8 @@ class Map extends PureComponent<MapProps, MapStates> {
       tooltipHTML: `<div style="color: black;">{label}</div>`,
       tooltipPosition: "pointer",
     });
-    lineSeries.data.setAll(lines);
+    lineSeries.data.setAll(this.createLines());
+    this.setState({ lineSeries });
   }
 
   createPoints = () => {
@@ -142,7 +160,9 @@ class Map extends PureComponent<MapProps, MapStates> {
   }
 
   componentDidMount(): void {
-    this.props.fetchAirports();
+    const { fetchAirports, fetchRoutes } = this.props;
+    fetchRoutes();
+    fetchAirports();
     const root = am5.Root.new("chartdiv");
     this.setState({ root });
     const chart = root.container.children.push(
@@ -159,13 +179,19 @@ class Map extends PureComponent<MapProps, MapStates> {
   }
 
   componentDidUpdate(oldProps: MapProps): void {
-    if (oldProps.airports !== this.props.airports) {
-      const { pointSeries, polygonSeries } = this.state;
-      if (pointSeries) {
-        pointSeries.data.setAll(this.createPoints());
-      }
+    if (
+      oldProps.airports !== this.props.airports ||
+      oldProps.routes !== this.props.routes
+    ) {
+      const { pointSeries, polygonSeries, lineSeries } = this.state;
       if (polygonSeries) {
         polygonSeries.data.setAll(this.createRegions());
+      }
+      if (lineSeries) {
+        lineSeries.data.setAll(this.createLines());
+      }
+      if (pointSeries) {
+        pointSeries.data.setAll(this.createPoints());
       }
     }
   }
@@ -185,12 +211,15 @@ class Map extends PureComponent<MapProps, MapStates> {
 const mapStateToProps = (state: RootState) => ({
   isLoading: state.map.isLoading,
   airports: state.map.airports,
+  routes: state.map.routes,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       fetchAirports,
+      fetchFlights,
+      fetchRoutes,
     },
     dispatch
   );

@@ -30,7 +30,7 @@ class Travel extends PureComponent {
               </li>
               <li className="Travel__section--bullet">Japan (Nov 2019)</li>
               <li className="Travel__section--bullet">
-                Banff NP, Canada (July 2019)
+                Banff NP, Canada (Jul 2019)
               </li>
               <li className="Travel__section--bullet">Spain (Nov 2018)</li>
               <li className="Travel__section--bullet">Italy (Sep 2018)</li>

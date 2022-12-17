@@ -1,12 +1,28 @@
 import "./Travel.scss";
 import { PureComponent } from "react";
+import { connect } from "react-redux";
 import withHeaderFooterWrapper from "../../components/HeaderFooterWrapper";
 import Map from "../../components/Map";
 
-class Travel extends PureComponent {
+import { RootState } from "../../../store";
+import Loader from "../../components/Loader";
+
+type TravelProps = {
+  isLoadingAirports: boolean;
+  isLoadingFlights: boolean;
+  isLoadingRoutes: boolean;
+};
+
+class Travel extends PureComponent<TravelProps> {
+  constructor(props: TravelProps) {
+    super(props);
+  }
+
   render() {
+    const { isLoadingAirports, isLoadingRoutes } = this.props;
     return (
       <div className="Travel">
+        <Loader isLoading={isLoadingAirports || isLoadingRoutes} />
         <div className="Travel__map">
           <Map />
         </div>
@@ -49,4 +65,10 @@ class Travel extends PureComponent {
   }
 }
 
-export default withHeaderFooterWrapper(Travel);
+const mapStateToProps = (state: RootState) => ({
+  isLoadingAirports: state.map.isLoadingAirports,
+  isLoadingFlights: state.map.isLoadingFlights,
+  isLoadingRoutes: state.map.isLoadingRoutes,
+});
+
+export default withHeaderFooterWrapper(connect(mapStateToProps)(Travel));

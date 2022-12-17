@@ -19,7 +19,6 @@ import {
 } from "../../../actions/mapActions";
 
 type MapProps = {
-  isLoading: boolean;
   airports: Airport[];
   routes: Route[];
   fetchAirports: typeof fetchAirports;
@@ -209,7 +208,6 @@ class Map extends PureComponent<MapProps, MapStates> {
 }
 
 const mapStateToProps = (state: RootState) => ({
-  isLoading: state.map.isLoading,
   airports: state.map.airports,
   routes: state.map.routes,
 });

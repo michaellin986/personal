@@ -17,7 +17,8 @@ import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
 
 type AuthenticationProps = {
-  isLoading: boolean;
+  isLoadingLogin: boolean;
+  isLoadingLogout: boolean;
   login: typeof login;
   logout: typeof logout;
 };
@@ -105,7 +106,8 @@ class Authentication extends PureComponent<
 }
 
 const mapStateToProps = (state: RootState) => ({
-  isLoading: state.auth.isLoading,
+  isLoadingLogin: state.auth.isLoadingLogin,
+  isLoadingLogout: state.auth.isLoadingLogout,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>

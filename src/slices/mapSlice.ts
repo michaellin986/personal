@@ -3,7 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 export const mapSlice = createSlice({
   name: "map",
   initialState: {
-    isLoading: false,
+    isLoadingAirports: false,
+    isLoadingFlights: false,
+    isLoadingRoutes: false,
     error: "",
     airports: [],
     flights: [],
@@ -11,36 +13,36 @@ export const mapSlice = createSlice({
   },
   reducers: {
     fetchAirportsRequest: (state) => {
-      state.isLoading = true;
+      state.isLoadingAirports = true;
     },
     fetchAirportsSuccess: (state, action) => {
-      state.isLoading = false;
+      state.isLoadingAirports = false;
       state.airports = action.payload;
     },
     fetchAirportsFailure: (state, action) => {
-      state.isLoading = false;
+      state.isLoadingAirports = false;
       state.error = action.payload.error;
     },
     fetchFlightsRequest: (state) => {
-      state.isLoading = true;
+      state.isLoadingFlights = true;
     },
     fetchFlightsSuccess: (state, action) => {
-      state.isLoading = false;
+      state.isLoadingFlights = false;
       state.flights = action.payload;
     },
     fetchFlightsFailure: (state, action) => {
-      state.isLoading = false;
+      state.isLoadingFlights = false;
       state.error = action.payload.error;
     },
     fetchRoutesRequest: (state) => {
-      state.isLoading = true;
+      state.isLoadingRoutes = true;
     },
     fetchRoutesSuccess: (state, action) => {
-      state.isLoading = false;
+      state.isLoadingRoutes = false;
       state.routes = action.payload;
     },
     fetchRoutesFailure: (state, action) => {
-      state.isLoading = false;
+      state.isLoadingRoutes = false;
       state.error = action.payload.error;
     },
   },

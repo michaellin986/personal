@@ -3,28 +3,29 @@ import { createSlice } from "@reduxjs/toolkit";
 export const authSlice = createSlice({
   name: "auth",
   initialState: {
-    isLoading: false,
+    isLoadingLogin: false,
+    isLoadingLogout: false,
     error: "",
   },
   reducers: {
     loginRequest: (state) => {
-      state.isLoading = true;
+      state.isLoadingLogin = true;
     },
     loginSuccess: (state) => {
-      state.isLoading = false;
+      state.isLoadingLogin = false;
     },
     loginFailure: (state, action) => {
-      state.isLoading = false;
+      state.isLoadingLogin = false;
       state.error = action.payload.error;
     },
     logoutRequest: (state) => {
-      state.isLoading = true;
+      state.isLoadingLogout = true;
     },
     logoutSuccess: (state) => {
-      state.isLoading = false;
+      state.isLoadingLogout = false;
     },
     logoutFailure: (state, action) => {
-      state.isLoading = false;
+      state.isLoadingLogout = false;
       state.error = action.payload.error;
     },
   },

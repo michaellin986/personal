@@ -1,25 +1,35 @@
 import variables from "../../../main.scss";
 import { PureComponent } from "react";
-import data from "../../../assets/data/Travel.json";
+import { Dispatch } from "redux";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 
 import * as am5 from "@amcharts/amcharts5";
 import * as am5map from "@amcharts/amcharts5/map";
 import am5geodata_worldGreatLakesHigh from "@amcharts/amcharts5-geodata/worldGreatLakesHigh";
 import am5geodata_usaHigh from "@amcharts/amcharts5-geodata/usaHigh";
 
+import { RootState } from "../../../store";
+import data from "../../../assets/data/Travel.json";
+import { Airport } from "../../../models/Map";
+import { fetchAirports } from "../../../actions/mapActions";
+
+type MapProps = {
+  isLoading: boolean;
+  airports: Airport[];
+  fetchAirports: typeof fetchAirports;
+};
+
+type MapStates = {
+  root: am5.Root | undefined;
+  pointSeries: am5map.MapPointSeries | undefined;
+  polygonSeries: am5map.MapPolygonSeries | undefined;
+};
+
 const routes: string[][] = data.routes;
 const coordinates: {
   [key: string]: number[];
 } = data.coordinates;
-const regions: string[] = data.regions;
-
-const points = Object.keys(coordinates).map((loc) => ({
-  geometry: {
-    type: "Point",
-    coordinates: coordinates[loc],
-  },
-  label: loc,
-}));
 
 const lines = routes.map((route) => {
   const [loc1, loc2] = route;
@@ -34,12 +44,14 @@ const lines = routes.map((route) => {
   };
 });
 
-class Map extends PureComponent {
-  root: am5.Root | undefined;
-
-  constructor(props: never) {
+class Map extends PureComponent<MapProps, MapStates> {
+  constructor(props: MapProps) {
     super(props);
-    this.root = undefined;
+    this.state = {
+      root: undefined,
+      pointSeries: undefined,
+      polygonSeries: undefined,
+    };
   }
 
   createPolygonSeries(root: am5.Root, chart: am5map.MapChart): void {
@@ -53,22 +65,15 @@ class Map extends PureComponent {
     polygonSeries.mapPolygons.template.setAll({
       templateField: "polygonSettings",
     });
-    polygonSeries.data.setAll(
-      regions.map((region) => {
-        return {
-          id: region,
-          polygonSettings: {
-            fill: am5.color(variables.colorTertiary),
-          },
-        };
-      })
-    );
+    const regions = this.createRegions();
+    polygonSeries.data.setAll(regions);
     chart.series.push(
       am5map.MapPolygonSeries.new(root, {
         geoJSON: am5geodata_usaHigh,
         fill: am5.color(variables.colorTertiary),
       })
     );
+    this.setState({ polygonSeries });
   }
 
   createLineSeries(root: am5.Root, chart: am5map.MapChart): void {
@@ -80,11 +85,44 @@ class Map extends PureComponent {
     );
     lineSeries.mapLines.template.setAll({
       strokeWidth: 1.5,
-      tooltipText: "{label}",
+      tooltipHTML: `<div style="color: black;">{label}</div>`,
       tooltipPosition: "pointer",
     });
     lineSeries.data.setAll(lines);
   }
+
+  createPoints = () => {
+    const { airports } = this.props;
+    return airports.length === 0
+      ? Object.keys(coordinates).map((loc) => ({
+          geometry: {
+            type: "Point",
+            coordinates: coordinates[loc],
+          },
+          code: loc,
+        }))
+      : airports.map((airport) => ({
+          geometry: {
+            type: "Point",
+            coordinates: [airport.longitude, airport.latitude],
+          },
+          code: airport.code,
+        }));
+  };
+
+  createRegions = () => {
+    const { airports } = this.props;
+    const regions =
+      airports.length === 0
+        ? data.regions
+        : Array.from(new Set(airports.map((airport) => airport.country)));
+    return regions.map((region) => ({
+      id: region,
+      polygonSettings: {
+        fill: am5.color(variables.colorTertiary),
+      },
+    }));
+  };
 
   createPointSeries(root: am5.Root, chart: am5map.MapChart): void {
     const pointSeries = chart.series.push(am5map.MapPointSeries.new(root, {}));
@@ -94,16 +132,19 @@ class Map extends PureComponent {
           radius: 3,
           fill: am5.color(variables.colorQuaternary),
           stroke: am5.color(variables.colorPrimary),
-          tooltipText: "{label}",
+          tooltipHTML: "{code}",
           tooltipPosition: "pointer",
         }),
       });
     });
-    pointSeries.data.setAll(points);
+    pointSeries.data.setAll(this.createPoints());
+    this.setState({ pointSeries });
   }
 
   componentDidMount(): void {
+    this.props.fetchAirports();
     const root = am5.Root.new("chartdiv");
+    this.setState({ root });
     const chart = root.container.children.push(
       am5map.MapChart.new(root, {
         zoomStep: 1.25,
@@ -112,16 +153,27 @@ class Map extends PureComponent {
         projection: am5map.geoMercator(),
       })
     );
-
     this.createPolygonSeries(root, chart);
     this.createLineSeries(root, chart);
     this.createPointSeries(root, chart);
-    this.root = root;
+  }
+
+  componentDidUpdate(oldProps: MapProps): void {
+    if (oldProps.airports !== this.props.airports) {
+      const { pointSeries, polygonSeries } = this.state;
+      if (pointSeries) {
+        pointSeries.data.setAll(this.createPoints());
+      }
+      if (polygonSeries) {
+        polygonSeries.data.setAll(this.createRegions());
+      }
+    }
   }
 
   componentWillUnmount(): void {
-    if (this.root) {
-      this.root.dispose();
+    const { root } = this.state;
+    if (root) {
+      root.dispose();
     }
   }
 
@@ -130,4 +182,17 @@ class Map extends PureComponent {
   }
 }
 
-export default Map;
+const mapStateToProps = (state: RootState) => ({
+  isLoading: state.map.isLoading,
+  airports: state.map.airports,
+});
+
+const mapDispatchToProps = (dispatch: Dispatch) =>
+  bindActionCreators(
+    {
+      fetchAirports,
+    },
+    dispatch
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(Map);

@@ -22,7 +22,7 @@ export const login =
         dispatch(loginSuccess());
       })
       .catch((error) => {
-        dispatch(loginFailure(error));
+        dispatch(loginFailure(error.message));
       });
   };
 
@@ -35,6 +35,6 @@ export const logout = () => (dispatch: Dispatch) => {
       dispatch(logoutSuccess());
     })
     .catch((error) => {
-      dispatch(logoutFailure(error));
+      dispatch(logoutFailure(error.message));
     });
 };

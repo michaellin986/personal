@@ -20,6 +20,7 @@ export const login =
           response.data.key
         );
         dispatch(loginSuccess());
+        window.location.reload();
       })
       .catch((error) => {
         dispatch(loginFailure(error.message));
@@ -33,6 +34,7 @@ export const logout = () => (dispatch: Dispatch) => {
     .then((response) => {
       localStorage.removeItem("michaellin-personal-api-token");
       dispatch(logoutSuccess());
+      window.location.reload();
     })
     .catch((error) => {
       dispatch(logoutFailure(error.message));

@@ -13,77 +13,81 @@ export function withHeaderFooterWrapper(WrappedComponent: ComponentType) {
         <div>
           <div className="HeaderFooterWrapper__header">
             <div className="HeaderFooterWrapper__header--container">
-              <div>
-                <NavLink
-                  to="/"
-                  className="HeaderFooterWrapper__header--name"
-                  style={{ textDecoration: "none" }}
-                >
-                  Michael Lin
-                </NavLink>
+              <div className="HeaderFooterWrapper__header--authentication">
+                <Authentication />
               </div>
-              <div className="HeaderFooterWrapper__header--buttons">
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    "HeaderFooterWrapper__header--button" +
-                    (isActive
-                      ? " HeaderFooterWrapper__header--buttonActive"
-                      : "")
-                  }
-                  style={{ textDecoration: "none" }}
-                >
-                  Home
-                </NavLink>
-                <NavLink
-                  to="/work"
-                  className={({ isActive }) =>
-                    "HeaderFooterWrapper__header--button" +
-                    (isActive
-                      ? " HeaderFooterWrapper__header--buttonActive"
-                      : "")
-                  }
-                  style={{ textDecoration: "none" }}
-                >
-                  Work
-                </NavLink>
-                <NavLink
-                  to="/music"
-                  className={({ isActive }) =>
-                    "HeaderFooterWrapper__header--button" +
-                    (isActive
-                      ? " HeaderFooterWrapper__header--buttonActive"
-                      : "")
-                  }
-                  style={{ textDecoration: "none" }}
-                >
-                  Music
-                </NavLink>
-                <NavLink
-                  to="/travel"
-                  className={({ isActive }) =>
-                    "HeaderFooterWrapper__header--button" +
-                    (isActive
-                      ? " HeaderFooterWrapper__header--buttonActive"
-                      : "")
-                  }
-                  style={{ textDecoration: "none" }}
-                >
-                  Travel
-                </NavLink>
-                <NavLink
-                  to="/other"
-                  className={({ isActive }) =>
-                    "HeaderFooterWrapper__header--button" +
-                    (isActive
-                      ? " HeaderFooterWrapper__header--buttonActive"
-                      : "")
-                  }
-                  style={{ textDecoration: "none" }}
-                >
-                  Other
-                </NavLink>
-                {/* <Authentication /> */}
+              <div className="HeaderFooterWrapper__header--titleMenu">
+                <div>
+                  <NavLink
+                    to="/"
+                    className="HeaderFooterWrapper__header--name"
+                    style={{ textDecoration: "none" }}
+                  >
+                    Michael Lin
+                  </NavLink>
+                </div>
+                <div className="HeaderFooterWrapper__header--buttons">
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      "HeaderFooterWrapper__header--button" +
+                      (isActive
+                        ? " HeaderFooterWrapper__header--buttonActive"
+                        : "")
+                    }
+                    style={{ textDecoration: "none" }}
+                  >
+                    Home
+                  </NavLink>
+                  <NavLink
+                    to="/work"
+                    className={({ isActive }) =>
+                      "HeaderFooterWrapper__header--button" +
+                      (isActive
+                        ? " HeaderFooterWrapper__header--buttonActive"
+                        : "")
+                    }
+                    style={{ textDecoration: "none" }}
+                  >
+                    Work
+                  </NavLink>
+                  <NavLink
+                    to="/music"
+                    className={({ isActive }) =>
+                      "HeaderFooterWrapper__header--button" +
+                      (isActive
+                        ? " HeaderFooterWrapper__header--buttonActive"
+                        : "")
+                    }
+                    style={{ textDecoration: "none" }}
+                  >
+                    Music
+                  </NavLink>
+                  <NavLink
+                    to="/travel"
+                    className={({ isActive }) =>
+                      "HeaderFooterWrapper__header--button" +
+                      (isActive
+                        ? " HeaderFooterWrapper__header--buttonActive"
+                        : "")
+                    }
+                    style={{ textDecoration: "none" }}
+                  >
+                    Travel
+                  </NavLink>
+                  <NavLink
+                    to="/other"
+                    className={({ isActive }) =>
+                      "HeaderFooterWrapper__header--button" +
+                      (isActive
+                        ? " HeaderFooterWrapper__header--buttonActive"
+                        : "")
+                    }
+                    style={{ textDecoration: "none" }}
+                  >
+                    Other
+                  </NavLink>
+                </div>
               </div>
             </div>
           </div>

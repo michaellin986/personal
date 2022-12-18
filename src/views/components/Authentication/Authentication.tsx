@@ -1,3 +1,5 @@
+import "./Authentication.scss";
+
 import { PureComponent } from "react";
 import { Dispatch } from "redux";
 import { bindActionCreators } from "redux";
@@ -13,8 +15,6 @@ import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
-import LoginIcon from "@mui/icons-material/Login";
-import LogoutIcon from "@mui/icons-material/Logout";
 
 type AuthenticationProps = {
   isLoadingLogin: boolean;
@@ -67,13 +67,32 @@ class Authentication extends PureComponent<
   render() {
     const { open } = this.state;
     return loggedIn() ? (
-      <Button variant="outlined" onClick={this.props.logout}>
-        <LogoutIcon />
+      <Button
+        variant="text"
+        sx={{
+          textTransform: "none",
+          "&:hover": { backgroundColor: "transparent" },
+          margin: 0,
+          padding: 0,
+        }}
+        onClick={this.props.logout}
+      >
+        <div className="Authentication__button--text">Logout</div>
       </Button>
     ) : (
       <div>
-        <Button variant="outlined" onClick={this.handleClickOpen}>
-          <LoginIcon />
+        <Button
+          variant="text"
+          sx={{
+            textTransform: "none",
+            "&:hover": { backgroundColor: "transparent" },
+            margin: 0,
+            padding: 0,
+            fontVariant: "normal",
+          }}
+          onClick={this.handleClickOpen}
+        >
+          <div className="Authentication__button--text">Login</div>
         </Button>
         <Dialog open={open} onClose={this.handleClose}>
           <DialogTitle>Login</DialogTitle>

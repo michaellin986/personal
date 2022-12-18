@@ -9,9 +9,22 @@
 
 .HeaderFooterWrapper__header--container {
   display: flex;
+  flex-direction: column;
   width: 768px;
   align-items: flex-end;
   justify-content: space-between;
+}
+
+.HeaderFooterWrapper__header--authentication {
+  height: 10px;
+}
+
+.HeaderFooterWrapper__header--titleMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
 }
 
 .HeaderFooterWrapper__header--name {
@@ -65,10 +78,14 @@
 }
 
 @media (max-width: 700px) {
-  .HeaderFooterWrapper__header--container {
+  .HeaderFooterWrapper__header--authentication {
+    height: 0;
+  }
+
+  .HeaderFooterWrapper__header--titleMenu {
     display: flex;
     flex-direction: column;
-    width: 768px;
+    justify-content: space-between;
     align-items: center;
   }
 
@@ -76,6 +93,10 @@
     color: $color-primary;
     font-size: 32px;
     font-weight: bold;
+  }
+
+  .HeaderFooterWrapper__header--buttons {
+    margin-top: 10px;
   }
 
   .HeaderFooterWrapper__header--button {

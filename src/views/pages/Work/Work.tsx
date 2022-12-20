@@ -104,7 +104,7 @@ class Work extends PureComponent {
           <div className="Work__position">
             <div className="Work__position--info">
               <div className="Work__position--titleCompany">
-                Data Product Associate, China E-Commerce
+                Data Product Associate, Alternative Data
               </div>
               <div className="Work__position--date">Apr 2018 - Oct 2019</div>
             </div>
@@ -118,12 +118,21 @@ class Work extends PureComponent {
               >
                 NYSE: BABA
               </a>
-              ) data product, which is comprised of market intelligence on the
-              Tmall and Taobao e-commerce platforms. In addition, I covered our
-              derivative Brands in China product that offered insights into how
-              global brands performed in the China e-commerce space. I managed
-              the data collection, data transformation, and data analysis
-              processes, along with authoring research reports.
+              ) data product, which provides market intelligence on the Tmall
+              and Taobao e-commerce platforms and is built with{" "}
+              <a
+                href="https://en.wikipedia.org/wiki/Alternative_data_(finance)"
+                className="Work__link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                alternative data
+              </a>
+              . In addition, I covered our derivative Brands in China product
+              that offers insights into how global retail brands perform in the
+              China e-commerce space. I managed the data collection, data
+              transformation, and data analysis processes, along with authoring
+              research reports.
             </div>
           </div>
         </div>

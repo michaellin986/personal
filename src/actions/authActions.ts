@@ -8,6 +8,7 @@ import {
   logoutSuccess,
   logoutFailure,
 } from "../slices/authSlice";
+import { createNotification } from "../slices/notificationSlice";
 
 export const login =
   (email: string, password: string) => (dispatch: Dispatch) => {
@@ -24,6 +25,12 @@ export const login =
       })
       .catch((error) => {
         dispatch(loginFailure(error.message));
+        dispatch(
+          createNotification({
+            message: "Login failed. Please try again.",
+            type: "error",
+          })
+        );
       });
   };
 
@@ -31,12 +38,18 @@ export const logout = () => (dispatch: Dispatch) => {
   dispatch(logoutRequest());
   axios
     .post("/auth/logout/")
-    .then((response) => {
+    .then(() => {
       localStorage.removeItem("michaellin-personal-api-token");
       dispatch(logoutSuccess());
       window.location.reload();
     })
     .catch((error) => {
       dispatch(logoutFailure(error.message));
+      dispatch(
+        createNotification({
+          message: "Logout failed. Please try again.",
+          type: "error",
+        })
+      );
     });
 };

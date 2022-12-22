@@ -42,10 +42,9 @@ class Authentication extends PureComponent<
     };
   }
 
-  login = () => {
+  handleLogin = () => {
     const { email, password } = this.state;
     this.props.login(email, password);
-    this.handleClose();
   };
 
   handleClickOpen = () => {
@@ -116,7 +115,7 @@ class Authentication extends PureComponent<
           </DialogContent>
           <DialogActions>
             <Button onClick={this.handleClose}>Cancel</Button>
-            <Button onClick={this.login}>Login</Button>
+            <Button onClick={this.handleLogin}>Login</Button>
           </DialogActions>
         </Dialog>
       </div>

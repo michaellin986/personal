@@ -7,6 +7,7 @@ import Work from "./views/pages/Work";
 import Music from "./views/pages/Music";
 import Other from "./views/pages/Other";
 import Travel from "./views/pages/Travel";
+import Notification from "./views/components/Notification";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/travel" element={<Travel />} />
         <Route path="/other" element={<Other />} />
       </Routes>
+      <Notification />
     </div>
   );
 }

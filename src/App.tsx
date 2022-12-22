@@ -8,6 +8,7 @@ import Music from "./views/pages/Music";
 import Other from "./views/pages/Other";
 import Travel from "./views/pages/Travel";
 import Notification from "./views/components/Notification";
+import Quantum from "./views/pages/Quantum";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/music" element={<Music />} />
         <Route path="/travel" element={<Travel />} />
         <Route path="/other" element={<Other />} />
+        <Route path="/quantum" element={<Quantum />} />
       </Routes>
       <Notification />
     </div>

@@ -1,0 +1,63 @@
+@import "../../../main.scss";
+
+.Quantum {
+  display: flex;
+  flex-direction: column;
+  width: 768px;
+  margin: 40px;
+}
+
+.Quantum__title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.Quantum__intro {
+  text-align: justify;
+  margin-bottom: 40px;
+}
+
+.Quantum__simulation {
+  border-top: 1px solid $color-primary;
+  padding: 40px 0;
+}
+
+.Quantum__subtitle {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+.Quantum__controllers {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.Quantum__controllers--players {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Quantum__controller {
+  display: flex;
+  flex-direction: column;
+}
+
+.Quantum__controller--title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.Quantum__controller--results {
+  margin: 20px 0;
+}
+
+.Quantum__link {
+  font-weight: bold;
+  color: $color-secondary;
+  text-decoration: none;
+}

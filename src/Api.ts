@@ -2,8 +2,12 @@ import axios from "axios";
 
 const token = localStorage.getItem("michaellin-personal-api-token");
 
-axios.defaults.baseURL =
-  process.env.API_BASE_URL || "http://localhost:8000/api/v1";
+if (process.env.NODE_ENV === "production") {
+  axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
+} else {
+  axios.defaults.baseURL = "http://localhost:8000/api/v1";
+}
+
 axios.defaults.headers.post["Content-Type"] = "application/json";
 if (token) {
   axios.defaults.headers.common["Authorization"] =

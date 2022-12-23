@@ -10,7 +10,6 @@ import am5geodata_worldGreatLakesHigh from "@amcharts/amcharts5-geodata/worldGre
 import am5geodata_usaHigh from "@amcharts/amcharts5-geodata/usaHigh";
 
 import { RootState } from "../../../store";
-import data from "../../../assets/data/Travel.json";
 import { Airport, Route } from "../../../models/Map";
 import {
   fetchAirports,
@@ -32,10 +31,6 @@ type MapStates = {
   polygonSeries: am5map.MapPolygonSeries | undefined;
   lineSeries: am5map.MapLineSeries | undefined;
 };
-
-const coordinates: {
-  [key: string]: number[];
-} = data.coordinates;
 
 class Map extends PureComponent<MapProps, MapStates> {
   constructor(props: MapProps) {
@@ -72,24 +67,16 @@ class Map extends PureComponent<MapProps, MapStates> {
 
   createLines = () => {
     const { airports, routes } = this.props;
-    return airports.length === 0 || routes.length === 0
-      ? data.routes.map((route) => ({
-          geometry: {
-            type: "LineString",
-            coordinates: route.map((loc) => coordinates[loc]),
-          },
-          label: route.join("/"),
-        }))
-      : routes.map((route) => ({
-          geometry: {
-            type: "LineString",
-            coordinates: route.map((loc) => {
-              const airport = airports.find((airport) => airport.code === loc);
-              return [airport?.longitude, airport?.latitude];
-            }),
-          },
-          label: route.join("/"),
-        }));
+    return routes.map((route) => ({
+      geometry: {
+        type: "LineString",
+        coordinates: route.map((loc) => {
+          const airport = airports.find((airport) => airport.code === loc);
+          return [airport?.longitude, airport?.latitude];
+        }),
+      },
+      label: route.join("/"),
+    }));
   };
 
   createLineSeries(root: am5.Root, chart: am5map.MapChart): void {
@@ -110,29 +97,20 @@ class Map extends PureComponent<MapProps, MapStates> {
 
   createPoints = () => {
     const { airports } = this.props;
-    return airports.length === 0
-      ? Object.keys(coordinates).map((loc) => ({
-          geometry: {
-            type: "Point",
-            coordinates: coordinates[loc],
-          },
-          code: loc,
-        }))
-      : airports.map((airport) => ({
-          geometry: {
-            type: "Point",
-            coordinates: [airport.longitude, airport.latitude],
-          },
-          code: airport.code,
-        }));
+    return airports.map((airport) => ({
+      geometry: {
+        type: "Point",
+        coordinates: [airport.longitude, airport.latitude],
+      },
+      code: airport.code,
+    }));
   };
 
   createRegions = () => {
     const { airports } = this.props;
-    const regions =
-      airports.length === 0
-        ? data.regions
-        : Array.from(new Set(airports.map((airport) => airport.country)));
+    const regions = Array.from(
+      new Set(airports.map((airport) => airport.country))
+    );
     return regions.map((region) => ({
       id: region,
       polygonSettings: {

@@ -31,7 +31,8 @@ class Travel extends PureComponent<TravelProps> {
           <div className="Travel__section--description">
             <p>
               The map above shows a sample of the places I&apos;ve flown to and
-              routes I have flown on across 31 airlines since 2002.
+              routes I have flown on (login required) across 31 airlines since
+              2002.
             </p>
             <p>
               Of course, flying is only half of the fun. Exploring new places

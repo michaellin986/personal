@@ -31,7 +31,7 @@ type QuantumStates = {
   currentDecoder: string;
 };
 
-const bases = ["{|0>, |1>}", "{|+>, |->}"];
+const bases = ["{|0⟩, |1⟩}", "{|+⟩, |−⟩}"];
 
 class Quantum extends PureComponent<QuantumProps, QuantumStates> {
   constructor(props: QuantumProps) {

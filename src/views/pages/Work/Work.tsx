@@ -8,9 +8,9 @@ class Work extends PureComponent {
       <div className="Work">
         <div className="Work__intro">
           <div className="Work__intro--quote">
-            &ldquo;Work hard and be kind and amazing things will happen.&rdquo;
+            Over the years, I have had the privilege of working with
+            exceptionally talented people on a variety of projects
           </div>
-          <div className="Work__intro--origin">- Conan O&apos;Brien</div>
         </div>
         <div className="Work__company">
           <div className="Work__company--name">

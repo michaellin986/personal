@@ -10,11 +10,8 @@ class Other extends PureComponent {
       <div className="Other">
         <div className="Other__intro">
           <div className="Other__intro--quote">
-            &ldquo;Jack of all trades, master of{" "}
-            <span style={{ textDecoration: "line-through" }}>none</span> a
-            few.&rdquo;
+            A sample of my other endeavors
           </div>
-          <div className="Other__intro--origin">- Me</div>
         </div>
         <div className="Other__content">
           <div className="Other__content--section">Education</div>
@@ -114,7 +111,7 @@ class Other extends PureComponent {
           </div>
         </div>
         <div className="Other__content">
-          <div className="Other__content--section">Projects</div>
+          <div className="Other__content--section">Research Projects</div>
           <div className="Other__position">
             <div className="Other__position--info">
               <div className="Other__position--org">
@@ -227,11 +224,7 @@ class Other extends PureComponent {
               <ul className="Other__position--bullets">
                 <li className="Other__position--bullet">Bayesian statistics</li>
                 <li className="Other__position--bullet">
-                  Markov chain Monte Carlo (Gibbs sampling, Metropolis-Hastings
-                  algorithm)
-                </li>
-                <li className="Other__position--bullet">
-                  Ordinary and partial differential equations
+                  Markov chain Monte Carlo (MCMC)
                 </li>
               </ul>
               Professionally, I have experience with:

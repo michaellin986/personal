@@ -15,7 +15,7 @@ class Home extends PureComponent {
           />
         </div>
         <div className="Home__text">
-          <div className="Home__text--welcome">Welcome!</div>
+          <div className="Home__text--welcome">Welcome</div>
           <div className="Home__text--description">
             I am a student in the{" "}
             <a

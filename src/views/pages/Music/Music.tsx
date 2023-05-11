@@ -21,7 +21,7 @@ class Music extends PureComponent {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Northwestern University Philharmonia Orchestra
+              Northwestern University Philharmonia
             </a>
             . We perform symphonic works such as Dvorak&apos;s Slavonic Dances,
             and Prokofiev&apos;s Symphony No. 7.

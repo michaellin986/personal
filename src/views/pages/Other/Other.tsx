@@ -111,7 +111,61 @@ class Other extends PureComponent {
           </div>
         </div>
         <div className="Other__content">
-          <div className="Other__content--section">Research Projects</div>
+          <div className="Other__content--section">Projects</div>
+          <div className="Other__position">
+            <div className="Other__position--info">
+              <div className="Other__position--org">
+                Implementation of a Neural Network Language Model from Scratch
+              </div>
+            </div>
+            <div className="Other__position--description">
+              As part of the Deep Learning class (CS 449) I took at Northwestern
+              University, I worked with two other students to implement the
+              Transformer model (from the paper{" "}
+              <a
+                href="https://arxiv.org/pdf/1706.03762.pdf"
+                className="Other__link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Attention Is All You Need
+              </a>
+              ) from scratch. It was especially timely given the recent rise of
+              Transformer-based generative AI applications like{" "}
+              <a
+                href="https://openai.com/blog/chatgpt"
+                className="Other__link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ChatGPT
+              </a>
+              . We created the neural network model in Python using{" "}
+              <a
+                href="https://pytorch.org/"
+                className="Other__link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                PyTorch
+              </a>{" "}
+              and trained our model on Google Cloud&apos;s Deep Learning VM.
+              <ul className="Other__position--bullets">
+                <li className="Other__position--bullet">
+                  Project Attention (
+                  <a
+                    href="https://github.com/michaellin986/project-attention/"
+                    className="Other__link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub Repo
+                  </a>
+                  )
+                </li>
+              </ul>
+            </div>
+          </div>
           <div className="Other__position">
             <div className="Other__position--info">
               <div className="Other__position--org">
@@ -157,7 +211,7 @@ class Other extends PureComponent {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Paper
+                    Report
                   </a>{" "}
                   |{" "}
                   <a
@@ -220,11 +274,14 @@ class Other extends PureComponent {
           <div className="Other__position">
             <div className="Other__position--description">
               I acquired most of my technical skills from coursework and job
-              experience. Academically, I have significant exposure to:
+              experience. Academically, I have exposure to:
               <ul className="Other__position--bullets">
                 <li className="Other__position--bullet">Bayesian statistics</li>
                 <li className="Other__position--bullet">
                   Markov chain Monte Carlo (MCMC)
+                </li>
+                <li className="Other__position--bullet">
+                  Natural language processing (NLP)
                 </li>
               </ul>
               Professionally, I have experience with:

@@ -17,7 +17,7 @@ class Home extends PureComponent {
         <div className="Home__text">
           <div className="Home__text--welcome">Welcome</div>
           <div className="Home__text--description">
-            I am a student in the{" "}
+            I am a recent graduate of the{" "}
             <a
               className="Home__text--link"
               href="https://www.kellogg.northwestern.edu/programs/full-time-mba/mbai-program.aspx"

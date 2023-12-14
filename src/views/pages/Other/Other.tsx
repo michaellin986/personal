@@ -22,9 +22,9 @@ class Other extends PureComponent {
               </div>
             </div>
             <div className="Other__position--description">
-              I am currently pursuing a joint MBA degree in Artificial
-              Intelligence in the Kellogg School of Management and the McCormick
-              School of Engineering at Northwestern University.
+              I received a joint MBA degree in Artificial Intelligence in the
+              Kellogg School of Management and the McCormick School of
+              Engineering at Northwestern University.
             </div>
           </div>
           <div className="Other__position">

@@ -40,6 +40,19 @@ class Travel extends PureComponent<TravelProps> {
               of my favorite trips in recent years include:
             </p>
             <ul className="Travel__section--bullets">
+              <li className="Travel__section--bullet">
+                Turkey and Portugal (Feb 2024)
+              </li>
+              <li className="Travel__section--bullet">
+                Vietnam, Singapore, and Indonesia (Feb 2024)
+              </li>
+              <li className="Travel__section--bullet">
+                India and Thailand (Jan 2024)
+              </li>
+              <li className="Travel__section--bullet">
+                Sweden and Denmark (Aug 2023)
+              </li>
+              <li className="Travel__section--bullet">UK (Mar 2023)</li>
               <li className="Travel__section--bullet">Norway (Aug 2022)</li>
               <li className="Travel__section--bullet">Iceland (Jun 2022)</li>
               <li className="Travel__section--bullet">

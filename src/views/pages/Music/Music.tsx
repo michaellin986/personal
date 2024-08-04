@@ -24,7 +24,8 @@ class Music extends PureComponent {
               Northwestern University Philharmonia
             </a>
             . We perform symphonic works such as Dvorak&apos;s Slavonic Dances,
-            and Prokofiev&apos;s Symphony No. 7.
+            and Prokofiev&apos;s Symphony No. 7. In addition, I have been a part
+            of the Northwestern Baroque Music Ensemble.
           </p>
           <p>
             Before returning to school, I played violin with various ensembles

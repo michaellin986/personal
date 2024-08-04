@@ -15,6 +15,28 @@ class Work extends PureComponent {
         <div className="Work__company">
           <div className="Work__company--name">
             <a
+              href="https://www.bcg.com/"
+              className="Work__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Boston Consulting Group
+            </a>
+          </div>
+          <div className="Work__position">
+            <div className="Work__position--info">
+              <div className="Work__position--titleCompany">Consultant</div>
+              <div className="Work__position--date">Apr 2024 - Now</div>
+            </div>
+            <div className="Work__position--description">
+              Since May 2024, I have been advising a regional health insurance
+              company on strategies to grow their specialty lines of business.
+            </div>
+          </div>
+        </div>
+        <div className="Work__company">
+          <div className="Work__company--name">
+            <a
               href="https://www.yipitdata.com/"
               className="Work__link"
               target="_blank"

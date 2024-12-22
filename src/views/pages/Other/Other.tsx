@@ -24,8 +24,8 @@ class Other extends PureComponent {
             <div className="Other__position--description">
               I received a joint MBA degree in Artificial Intelligence in the
               Kellogg School of Management and the McCormick School of
-              Engineering at Northwestern University. I graduated with distinct
-              and was inducted into the{" "}
+              Engineering at Northwestern University. I graduated with
+              distinction and was inducted into the{" "}
               <a
                 href="https://www.betagammasigma.org/"
                 className="Other__link"
